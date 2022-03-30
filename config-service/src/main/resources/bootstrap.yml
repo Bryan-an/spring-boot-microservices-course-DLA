@@ -7,7 +7,8 @@ spring:
       server:
         git:
           uri: https://github.com/Bryan-an/spring-boot-microservices-course-DLA.git
-          searchPath: config-data
+          search-paths:
+            - config-data
           username: ${GIT_USER}
           password: ${GIT_PASSWORD}
   security:
