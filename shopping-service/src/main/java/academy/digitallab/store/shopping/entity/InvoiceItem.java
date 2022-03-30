@@ -1,5 +1,6 @@
 package academy.digitallab.store.shopping.entity;
 
+import academy.digitallab.store.shopping.model.Product;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -14,10 +15,6 @@ public class InvoiceItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "invoice_id")
-    private Invoice invoice;
-
     @Positive(message = "The stock must be greater than zero")
     private Double quantity;
 
@@ -28,6 +25,9 @@ public class InvoiceItem {
 
     @Transient
     private Double subTotal;
+
+    @Transient
+    private Product product;
 
     public InvoiceItem() {
         this.quantity = 0D;

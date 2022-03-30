@@ -48,6 +48,7 @@ public class InvoiceRest {
             return ResponseEntity.notFound().build();
         }
 
+
         return ResponseEntity.ok(invoice);
     }
 
